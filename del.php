@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!$_SESSION['user']) {
+        header('Location: index.php');
+    }
+?> 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,10 +28,10 @@
 <body>
   <div class="pk" id="pk">
   <nav>
-  <a class="apk" href="./index.html"><img class = "logoPK" src="img/Logo.png"></a> 
-  <a id="n" href="./qr.html"><span>Добавление</span></a><br>
+  <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
+  <a id="n" href="./qr.php"><span>Добавление</span></a><br>
   <a id="n" href="#2"><span>Редактирование</span></a><br>
-  <a id="n1" href="./del.html"><span>Удаление</span></a><br>
+  <a id="n1" href="./del.php"><span>Удаление</span></a><br>
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
   </nav>

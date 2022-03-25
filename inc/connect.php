@@ -1,7 +1,7 @@
 <?php
 
-    $connect = mysqli_connect('localhost', 'root', '', 'test');
+    $connect = mysqli_connect('localhost', 'root', '', 'praktika');
 
     if (!$connect) {
-        die('Error connect to DataBase');
+        die('Ошибка подключения к базе данных');
     }
