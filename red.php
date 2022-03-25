@@ -8,8 +8,9 @@
 <html lang="ru">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Добавление</title>
+    <title>Редактирование</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500&family=Poiret+One&display=swap');
       #n1 {
@@ -22,15 +23,11 @@
       #n1:hover {
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0);
       }
-      img{
-        border: 1.5px solid;
-        border-radius: 12px;
-      }
       </style>
-
+      
 <body>
   <div class="pk" id="pk">
-    <script type="text/javascript">
+  <script type="text/javascript">
       function create()
       {
           var data=document.getElementById("data").value;
@@ -39,14 +36,14 @@
       </script>
   <nav>
   <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
-  <a id="n1" class = "n" href="./qr.php"><span>Добавление</span></a><br>
-  <a id="n" href="./red.php"><span>Редактирование</span></a><br>
+  <a id="n" href="./qr.php"><span>Добавление</span></a><br>
+  <a id="n1" href="./red.php"><span>Редактирование</span></a><br>
   <a id="n" href="./del.php"><span>Удаление</span></a><br>
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
   </nav>
   <fieldset><form action=""> 
-    <h1>Добавление товара</h1><br>
+    <h1>Редактирование информации</h1><br>
     <label>Наименование товара</label>
     <input type="text" placeholder="Введите наименование">
     <label>Тип товара</label><br>
@@ -64,7 +61,7 @@
     <input type="number" placeholder="Введите число">
     <button class="button">Добавить</button>
 </form></fieldset>
-  <div class="qrc" style="margin-left: 2%;">
+<div class="qrc" style="margin-left: 2%;">
     <div id="mainbody">
     <table border="0" align="center">
     <tbody><tr class="text"><td>

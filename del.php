@@ -8,7 +8,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Удаление товара</title>
+    <title>Удаление</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -30,7 +30,7 @@
   <nav>
   <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
   <a id="n" href="./qr.php"><span>Добавление</span></a><br>
-  <a id="n" href="#2"><span>Редактирование</span></a><br>
+  <a id="n" href="./red.php"><span>Редактирование</span></a><br>
   <a id="n1" href="./del.php"><span>Удаление</span></a><br>
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
