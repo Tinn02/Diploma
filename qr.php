@@ -45,24 +45,30 @@
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
   </nav>
-  <fieldset><form action=""> 
+  <fieldset><form action="inc/insert.php" method="post"> 
     <h1>Добавление товара</h1><br>
     <label>Наименование товара</label>
-    <input type="text" placeholder="Введите наименование">
+    <input type="text" name = "name" placeholder="Введите наименование">
     <label>Тип товара</label><br>
-    <select name="list1">
+    <select name="type">
       <option disabled selected>Выберите из списка</option>
-      <option value="1">Компьютер</option>
-      <option value="2">Стол</option>
-      <option value="3">Шкаф</option>
-      <option value="4">Монитор</option>
-      <option value="5">МФУ</option>
+      <option value="Компьютер">Компьютер</option>
+      <option value="Стол">Стол</option>
+      <option value="Шкаф">Шкаф</option>
+      <option value="Монитор">Монитор</option>
+      <option value="МФУ">МФУ</option>
      </select><br>
     <label>Инвентаризационный номер</label>
-    <input type="text" placeholder="Введите номер">
+    <input type="text" name = "number" placeholder="Введите номер">
     <label>Количество</label>
-    <input type="number" placeholder="Введите число">
-    <button class="button">Добавить</button>
+    <input type="number" name = "cont" placeholder="Введите число">
+    <button type = "submit" class="button">Добавить</button>
+    <?php 
+            if ($_SESSION['message']){
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+            ?>
 </form></fieldset>
   <div class="qrc" style="margin-left: 2%;">
     <div id="mainbody">
