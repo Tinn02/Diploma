@@ -35,23 +35,29 @@
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
   </nav>
-  <fieldset><form action="">
+  <fieldset><form action = "inc/search.php" method = "get">
     <h1>Удаление товара</h1><br>
     <p>Поиск</p>
-    <input type="search" placeholder="Введите наименование, номер или ID">
+    <input type="text" name="search" placeholder="Введите наименование, номер или ID">
     <button class="search" type="submit"><i class="fa fa-search"></i></button>
-  </form>
-  <form action=""> 
+    <?php 
+      if ($_SESSION['message']){
+        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+      }
+      unset($_SESSION['message']);
+      ?>
+    </form>
+    <form action = "" method = "post">
     <label>Наименование товара</label>
-    <input type="text" placeholder="Наименование" readonly>
+    <input type="text" placeholder="Наименование" value="<?php echo $name; ?>"  readonly>
     <label>Тип товара</label>
-    <input type="text" placeholder="Тип" readonly>
+    <input type="text" placeholder="Тип" value="<?php echo $type; ?>"  readonly>
     <label>Инвентаризационный номер</label>
-    <input type="text" placeholder="Номер" readonly>
+    <input type="text" placeholder="Номер" value="<?php echo $number; ?>"  readonly>
     <label>Количество</label>
-    <input type="number" placeholder="Число" readonly>
-    <button class="button">Удалить</button>
+    <input type="text" placeholder="Число" value="<?php echo $cont; ?>"  readonly>
+    <button class="button" type = "submit">Удалить</button>
 </form></fieldset>
-  </div>
+</div>
 </body>
 </html>

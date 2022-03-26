@@ -42,8 +42,18 @@
   <a id="n" href="#4"><span>Список</span></a><br>
   <a id="n" href="#5"><span>Отчёт</span></a><br>
   </nav>
-  <fieldset><form action=""> 
-    <h1>Редактирование информации</h1><br>
+  <fieldset><form action = "inc/search1.php" method = "get">
+  <h1>Редактирование информации</h1><br>
+    <p>Поиск</p>
+    <input type="text" name="search" placeholder="Введите наименование, номер или ID">
+    <button class="search" name="submit" type="submit"><i class="fa fa-search"></i></button>
+    <?php 
+      if ($_SESSION['message']){
+        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+      }
+      unset($_SESSION['message']);
+      ?>
+    <form action=""> 
     <label>Наименование товара</label>
     <input type="text" placeholder="Введите наименование">
     <label>Тип товара</label><br>
