@@ -82,6 +82,11 @@ nav {
 	padding: 5px;
 }
 
+a {
+    outline: none;
+    color: #000000;
+}
+
 .logoPK {
     border: unset;
     width: 130px;

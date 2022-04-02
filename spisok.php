@@ -59,6 +59,7 @@
           <td><?= $product[2] ?></td>
           <td><?= $product[3] ?></td>
           <td><?= $product[4] ?></td>
+          <td><a href="/info.php?id=<?= $product[0] ?>">Инфо</a></td>
         </tr>
           <?php
         }
