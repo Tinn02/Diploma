@@ -3,7 +3,7 @@
     if (!$_SESSION['user']) {
         header('Location: index.php');
     }
-?>
+?> 
 <?php
   require_once 'inc/connect.php'
 ?>
@@ -11,7 +11,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Удаление</title>
+    <title>Редактирование</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -30,16 +30,23 @@
       
 <body>
   <div class="pk" id="pk">
+  <script type="text/javascript">
+      function create()
+      {
+          var data=document.getElementById("data").value;
+          document.getElementById("qrimage").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+encodeURIComponent(data)+"'/>";
+      }
+      </script>
   <nav>
   <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
   <a id="n" href="./ins.php"><span>Добавление</span></a><br>
-  <a id="n" href="./upd.php"><span>Редактирование</span></a><br>
-  <a id="n1" href="./del.php"><span>Удаление</span></a><br>
+  <a id="n1" href="./upd.php"><span>Редактирование</span></a><br>
+  <a id="n" href="./del.php"><span>Удаление</span></a><br>
   <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n" href="./otch.php"><span>Отчёт</span></a><br>
   </nav>
   <fieldset><form action = "" method = "get">
-    <h1>Удаление товара</h1><br>
+  <h1>Редактирование информации</h1><br>
     <p>Поиск</p>
     <input type="text" name="search" placeholder="Введите наименование, номер или ID">
     <button type = "submit" class="button">Найти</button>
@@ -49,8 +56,7 @@
       }
       unset($_SESSION['message']);
       ?>
-    </fieldset>
-</div>
+</form></fieldset>
 </body>
 </html>
 <?php if(!empty($_GET['search'])){
@@ -63,9 +69,9 @@
           $id = $obj['id'];
           
           $_SESSION['message'] = 'Товар найден';
-          header("Location: ../add/delete.php?search=$id");
+          header("Location: ../add/update.php?search=$id");
       } else {
           $_SESSION['message'] = 'Такого товара нет';
-          header('Location: ../del.php');
+          header('Location: ../upd.php');
       }
 } ?>

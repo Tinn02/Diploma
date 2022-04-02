@@ -1,7 +1,7 @@
 <?php
     session_start();
     if ($_SESSION['user']) {
-        header('Location: qr.php');
+        header('Location: ins.php');
     }
 ?>
 <!DOCTYPE html>

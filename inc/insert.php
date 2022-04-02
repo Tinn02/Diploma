@@ -11,6 +11,5 @@
     mysqli_query($connect, "INSERT INTO `goods` (`id`, `name`, `type`, `number`, `cont`) VALUES (NULL, '$name', '$type', '$number', '$cont')");
 
     $_SESSION['message'] = 'Данные внесены';
-    header('Location: ../qr.php');
-
+    header('Location: ../ins.php');
 ?>

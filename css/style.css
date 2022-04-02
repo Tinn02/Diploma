@@ -65,6 +65,23 @@ nav {
     align-items: center;
 }
 
+.table {
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+    text-align: center;
+    margin: 10px;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #429E9D;
+	border: 0.5px solid #000000;
+}
+.table td {
+	border: 0.5px solid #000000;
+	padding: 5px;
+}
+
 .logoPK {
     border: unset;
     width: 130px;
@@ -105,6 +122,18 @@ input {
     border: unset;
     border-bottom: 2px solid #e3e3e3;
     outline: none;
+}
+
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background: local;
+    resize: none;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.383);
+    border-radius: 10px;
+    outline: none;
+    cursor: default;
 }
 
 .button {

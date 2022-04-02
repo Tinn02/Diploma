@@ -39,11 +39,11 @@
       </script>
   <nav>
   <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
-  <a id="n1" class = "n" href="./qr.php"><span>Добавление</span></a><br>
-  <a id="n" href="./red.php"><span>Редактирование</span></a><br>
+  <a id="n1" class = "n" href="./ins.php"><span>Добавление</span></a><br>
+  <a id="n" href="./upd.php"><span>Редактирование</span></a><br>
   <a id="n" href="./del.php"><span>Удаление</span></a><br>
-  <a id="n" href="#4"><span>Список</span></a><br>
-  <a id="n" href="#5"><span>Отчёт</span></a><br>
+  <a id="n" href="./spisok.php"><span>Список</span></a><br>
+  <a id="n" href="./otch.php"><span>Отчёт</span></a><br>
   </nav>
   <fieldset><form action="inc/insert.php" method="post"> 
     <h1>Добавление товара</h1><br>
