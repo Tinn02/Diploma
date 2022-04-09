@@ -33,7 +33,7 @@
       }
       </style>
       
-<body>
+<body onload="create()">
   <div class="pk" id="pk">
   <script type="text/javascript">
       function create()
@@ -74,7 +74,7 @@
       }
       unset($_SESSION['message']);
       ?>
-    <button style="font-weight: bold;" class="button">Изменить</button>
+    <button class="button">Изменить</button>
 </form></fieldset>
 <div class="qrc" style="margin-left: 2%;">
     <div id="mainbody">
@@ -84,7 +84,6 @@
     <textarea cols="40" rows="1" id="data" readonly><?= $product['id'] ?></textarea>
     </td></tr>
     <tr><td align="center">
-    <div class="button" onclick="create()">Создать QR-код</div>
     </td></tr>
     <tr><td align="center">
     <div id="qrimage">

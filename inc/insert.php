@@ -10,6 +10,13 @@
 
     mysqli_query($connect, "INSERT INTO `goods` (`id`, `name`, `type`, `number`, `cont`) VALUES (NULL, '$name', '$type', '$number', '$cont')");
 
-    $_SESSION['message'] = 'Данные внесены';
-    header('Location: ../ins.php');
+    $check = mysqli_query($connect, "SELECT * FROM `goods` WHERE `name` = '$name' AND `type` = '$type' AND `number` = '$number' AND `cont` = '$cont'  LIMIT 1");
+    if (mysqli_num_rows($check) > 0) {
+        $obj = mysqli_fetch_assoc($check);
+
+        $id = $obj['id'];
+
+        $_SESSION['message'] = 'Товар добавлен';
+        header("Location: ../info.php?id=$id");
+    } 
 ?>

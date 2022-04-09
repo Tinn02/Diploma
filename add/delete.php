@@ -60,7 +60,7 @@
       }
       unset($_SESSION['message']);
       ?>
-    <button style="font-weight: bold;" class="button">Удалить</button>
+    <button class="button">Удалить</button>
 </form></fieldset>
 </div>
 </body>

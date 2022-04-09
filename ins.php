@@ -22,21 +22,10 @@
       #n1:hover {
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0);
       }
-      img{
-        border: 1.5px solid;
-        border-radius: 12px;
-      }
       </style>
 
 <body>
   <div class="pk" id="pk">
-    <script type="text/javascript">
-      function create()
-      {
-          var data=document.getElementById("data").value;
-          document.getElementById("qrimage").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+encodeURIComponent(data)+"'/>";
-      }
-      </script>
   <nav>
   <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
   <a id="n1" class = "n" href="./ins.php"><span>Добавление</span></a><br>
@@ -63,29 +52,7 @@
     <label>Количество</label>
     <input type="number" name = "cont" placeholder="Введите число">
     <button type = "submit" class="button">Добавить</button>
-    <?php 
-            if ($_SESSION['message']){
-                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-            }
-            unset($_SESSION['message']);
-            ?>
 </form></fieldset>
-  <div class="qrc" style="margin-left: 2%;">
-    <div id="mainbody">
-    <table border="0" align="center">
-    <tbody><tr class="text"><td>
-    <p style="font-size:20px;text-align:center; margin-bottom: 5%;">Введите ID для создания QR</p>
-    <textarea cols="40" rows="2" id="data"></textarea>
-    </td></tr>
-    <tr><td align="center">
-    <div class="button" onclick="create()">Создать QR-код</div>
-    </td></tr>
-    <tr><td align="center">
-    <div id="qrimage">
-    </div>
-    </td></tr>
-    </tbody></table>
-    </div>
   </div>
   </div>
 </body>
