@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@page { size: auto;  margin: 0mm; }
+
 body {
     background: linear-gradient(180deg, rgba(89, 186, 185, 0) 0%, #59BAB9 92.19%);  
     background-size: 100%;
@@ -27,7 +29,7 @@ body {
 
 img{
     border: 1.5px solid;
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
 p {

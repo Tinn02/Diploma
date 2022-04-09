@@ -32,7 +32,6 @@
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0);
       }
       </style>
-      
 <body onload="create()">
   <div class="pk" id="pk">
   <script type="text/javascript">
@@ -42,6 +41,18 @@
           document.getElementById("qrimage").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+encodeURIComponent(data)+"'/>";
       }
       </script>
+  <script>
+      function printDiv(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+      }
+  </script>
   <nav>
   <a class="apk" href="../inc/logout.php"><img class = "logoPK" src="../img/Logo.png"></a> 
   <a id="n" href="../ins.php"><span>Добавление</span></a><br>
@@ -77,11 +88,11 @@
     <textarea cols="40" rows="1" id="data" readonly><?= $product['id'] ?></textarea>
     </td></tr>
     <tr><td align="center">
-    <!-- <div class="button" onclick="create()">Создать QR-код</div> -->
     </td></tr>
     <tr><td align="center">
     <div id="qrimage">
     </div>
+    <button class="button" onclick="printDiv('qrimage')">Распечатать QR-код</button>
     </td></tr>
     </tbody></table>
     </div>
