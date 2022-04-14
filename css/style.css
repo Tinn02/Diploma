@@ -30,7 +30,7 @@ body {
 img{
     border: 1.5px solid;
     border-radius: 10px;
-  }
+}
 
 p {
     text-align: center;
@@ -54,6 +54,15 @@ nav {
     text-decoration: none;
     color: black;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+#ex {
+    border: none;  
+    outline: none; 
+    text-decoration: none;
+    color: black;
+    text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20%;
 }
 
 .pk{
@@ -179,6 +188,11 @@ textarea {
 #n:hover {
     color: #429E9D;
 }
+
+#ex:hover {
+    color: rgb(230, 0, 0);
+}
+
 .button:hover {
     background-position: right center;
 }

@@ -38,12 +38,13 @@
       }
       </script>
   <nav>
-  <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
+  <a class="apk"><img class = "logoPK" src="img/Logo.png"></a> 
+  <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n" href="./ins.php"><span>Добавление</span></a><br>
   <a id="n1" href="./upd.php"><span>Редактирование</span></a><br>
   <a id="n" href="./del.php"><span>Удаление</span></a><br>
-  <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n" href="./otch.php"><span>Отчёт</span></a><br>
+  <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
   <fieldset><form action = "" method = "get">
   <h1>Редактирование информации</h1><br>

@@ -15,7 +15,7 @@
             "login" => $user['login']
         ];
 
-        header('Location: ../ins.php');
+        header('Location: ../spisok.php');
     } else {
         $_SESSION['message'] = 'Неверный логин или пароль';
         header('Location: ../index.php');

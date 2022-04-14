@@ -1,7 +1,7 @@
 <?php
     session_start();
     if ($_SESSION['user']) {
-        header('Location: ins.php');
+        header('Location: spisok.php');
     }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 <body>
     <div class="aunth">
     <form action="inc/aunth.php" method="post">
-        <a href="inc/logout.php"><img src="img/Logo.png"></a>
+        <a><img src="img/Logo.png"></a>
         <h1>Добро пожаловать!</h1>
         <label>Логин</label>
         <input type="text" name="login" placeholder="Введите свой логин">

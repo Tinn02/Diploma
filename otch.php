@@ -4,6 +4,9 @@
         header('Location: index.php');
     }
 ?> 
+<?php
+  require_once 'inc/connect.php'
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -28,26 +31,56 @@
 <body>
   <div class="pk" id="pk">
   <nav>
-  <a class="apk" href="inc/logout.php"><img class = "logoPK" src="img/Logo.png"></a> 
+  <a class="apk"><img class = "logoPK" src="img/Logo.png"></a> 
+  <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n" href="./ins.php"><span>Добавление</span></a><br>
   <a id="n" href="./upd.php"><span>Редактирование</span></a><br>
   <a id="n" href="./del.php"><span>Удаление</span></a><br>
-  <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n1" href="./otch.php"><span>Отчёт</span></a><br>
+  <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
-  <fieldset><form action = "inc/search.php" method = "get">
-    <h1>Отчёты по товару</h1><br>
-    <p>Поиск</p>
-    <input type="text" name="search" placeholder="Введите наименование, номер или ID">
-    <button type = "submit" class="button">Найти</button>
-    <?php 
-      if ($_SESSION['message']){
-        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-      }
-      unset($_SESSION['message']);
-      ?>
+  <fieldset>
+  <div id="table">
+      <table class="table">
+      <td style="padding-bottom: 0;" colspan="5"><h1 style="padding-bottom: 0;">Отчёт по всем товарам</h1><br></td>
+        <tr>
+          <th>ID</th>
+          <th>Наименование</th>
+          <th>Тип</th>
+          <th>Инвентаризационный номер</th>
+          <th>Количество</th>
+        </tr>
+        <?php
+        $products = mysqli_query($connect, "SELECT * FROM `goods`");
+        $products = mysqli_fetch_all($products);
+        foreach ($products as $product){
+          ?>
+          <tr>
+          <td><?= $product[0] ?></td>
+          <td><?= $product[1] ?></td>
+          <td><?= $product[2] ?></td>
+          <td><?= $product[3] ?></td>
+          <td><?= $product[4] ?></td>
+        </tr>
+          <?php
+        }
+        ?>
+      </table>
+      </div>
+      <script>
+      function printDiv(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
 
-    </fieldset>
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+      }
+  </script>
+    <button style="margin: 0 auto 1%; display: block;" class="button" onclick="printDiv('table')">Распечатать отчёт</button>
+</fieldset>
 </div>
 </body>
 </html>
