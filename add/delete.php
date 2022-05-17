@@ -25,7 +25,7 @@
         border: none;  
         outline: none; 
         text-decoration: none;
-        color: #429E9D;
+        color: #0073bd;
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
       }
       #n1:hover {
@@ -38,18 +38,16 @@
   <a class="apk"><img class = "logoPK" src="../img/Logo.png"></a>
   <a id="n" href="../spisok.php"><span>Список</span></a><br> 
   <a id="n" href="../ins.php"><span>Добавление</span></a><br>
-  <a id="n" href="../upd.php"><span>Редактирование</span></a><br>
-  <a id="n" href="../del.php"><span>Удаление</span></a><br>
   <a id="n" href="../otch.php"><span>Отчёт</span></a><br>
   <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
-  <fieldset><form action = "../inc/delete.php" method = "get">
-  <h1>Удаление товара</h1><br>
-    <label>ID товара</label>
+  <fieldset><form class="form" action = "../inc/delete.php" method = "get">
+  <h1>Удаление </h1><br>
+    <label>ID объекта</label>
     <input type="text" name="id" value="<?= $product['id'] ?>" readonly>
-    <label>Наименование товара</label>
+    <label>Наименование объекта</label>
     <input type="text" name="name" value="<?= $product['name'] ?>" readonly>
-    <label>Тип товара</label>
+    <label>Тип объекта</label>
     <input type="text" value="<?= $product['type'] ?>" readonly>
     <label>Инвентаризационный номер</label>
     <input type="text" name="number" value="<?= $product['number'] ?>" readonly>

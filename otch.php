@@ -20,7 +20,7 @@
         border: none;  
         outline: none; 
         text-decoration: none;
-        color: #429E9D;
+        color: #0073bd;
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
       }
       #n1:hover {
@@ -30,57 +30,54 @@
       
 <body>
   <div class="pk" id="pk">
+  <script type="text/javascript">
+      function create()
+      {
+          var data=document.getElementById("data").value;
+          document.getElementById("qrimage").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+encodeURIComponent(data)+"'/>";
+      }
+      </script>
   <nav>
   <a class="apk"><img class = "logoPK" src="img/Logo.png"></a> 
   <a id="n" href="./spisok.php"><span>Список</span></a><br>
   <a id="n" href="./ins.php"><span>Добавление</span></a><br>
-  <a id="n" href="./upd.php"><span>Редактирование</span></a><br>
-  <a id="n" href="./del.php"><span>Удаление</span></a><br>
   <a id="n1" href="./otch.php"><span>Отчёт</span></a><br>
   <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
-  <fieldset>
-  <div id="table">
-      <table class="table">
-      <td style="padding-bottom: 0;" colspan="5"><h1 style="padding-bottom: 0;">Отчёт по всем товарам</h1><br></td>
-        <tr>
-          <th>ID</th>
-          <th>Наименование</th>
-          <th>Тип</th>
-          <th>Инвентаризационный номер</th>
-          <th>Количество</th>
-        </tr>
-        <?php
-        $products = mysqli_query($connect, "SELECT * FROM `goods`");
-        $products = mysqli_fetch_all($products);
-        foreach ($products as $product){
-          ?>
-          <tr>
-          <td><?= $product[0] ?></td>
-          <td><?= $product[1] ?></td>
-          <td><?= $product[2] ?></td>
-          <td><?= $product[3] ?></td>
-          <td><?= $product[4] ?></td>
-        </tr>
-          <?php
-        }
-        ?>
-      </table>
-      </div>
-      <script>
-      function printDiv(divName) {
-      var printContents = document.getElementById(divName).innerHTML;
-      var originalContents = document.body.innerHTML;
-
-      document.body.innerHTML = printContents;
-
-      window.print();
-
-      document.body.innerHTML = originalContents;
+  <fieldset><form class="form" action = "" method = "get">
+  <h1>Отчёт по кабинету</h1><br>
+    <p>Поиск</p>
+    <select name="search">
+      <option disabled selected>Выберите кабинет из списка</option>
+      <option value="102(1)">102(1)</option>
+      <option value="102(2)">102(2)</option>
+      <option value="102(3)">102(3)</option>
+      <option value="112">112</option>
+      <option value="123">123</option>
+     </select><br>
+    <button type = "submit" class="button">Найти</button>
+    <?php 
+      if ($_SESSION['message']){
+        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
       }
-  </script>
-    <button style="margin: 0 auto 1%; display: block;" class="button" onclick="printDiv('table')">Распечатать отчёт</button>
-</fieldset>
-</div>
+      unset($_SESSION['message']);
+      ?>
+</form></fieldset>
 </body>
 </html>
+<?php if(!empty($_GET['search'])){
+      session_start();
+      $search = trim($_GET['search']);
+      $check = mysqli_query($connect, "SELECT * FROM `goods` WHERE `type` = '$search' LIMIT 1");
+      if (mysqli_num_rows($check) > 0) {
+          $obj = mysqli_fetch_assoc($check);
+  
+          $type = $obj['type'];
+          
+          $_SESSION['message'] = 'Отчёт сформирован';
+          header("Location: ../add/table.php?search=$type");
+      } else {
+          $_SESSION['message'] = 'Такого кабинета нет';
+          header('Location: ../otch.php');
+      }
+} ?>

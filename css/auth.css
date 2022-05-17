@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(180deg, rgba(89, 186, 185, 0) 0%, #59BAB9 92.19%);
+    background: linear-gradient(180deg, rgba(89, 186, 185, 0) 0%, #6bd0f6 92.19%);
     background-size: 100%;
     height: 100vh;
     display: flex;
@@ -72,15 +72,16 @@ button {
     border: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background-image: radial-gradient(50% 1840.22% at 50% 51.11%, rgba(89, 186, 185, 0.8) 56.77%, rgba(89, 186, 185, 0.52) 94.79%);
+    /* background-image: radial-gradient(50% 1840.22% at 50% 51.11%, rgba(89, 186, 185, 0.8) 56.77%, rgba(89, 186, 185, 0.52) 94.79%); */
+    background-image: radial-gradient(50% 1840.22% at 50% 51.11%, rgba(107, 208, 246, 0.8) 56.77%, rgba(107, 208, 246, 0.5) 94.79%);
     background-size: 200% auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     transition: .5s;
 }
 
 .msg {
-    border: 2px solid #59bab87c;
-    background-color:#59bab844;
+    border: 2px solid #6bd1f61f;
+    background-color:#6bd1f680;
     border-radius: 3px;
     margin-top: 10px;
     padding: 10px;

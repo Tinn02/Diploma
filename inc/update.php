@@ -11,5 +11,5 @@
     mysqli_query($connect, "UPDATE `goods` SET `name` = '$name', `type` = '$type', `number` = '$number', `cont` = '$cont' WHERE `goods`.`id` = '$id'");
 
     $_SESSION['message'] = 'Данные изменены';
-    header('Location: ../upd.php');
+    header("Location: ../info.php?id=$id");
 ?>

@@ -16,7 +16,7 @@
         border: none;  
         outline: none; 
         text-decoration: none;
-        color: #429E9D;
+        color: #0073bd;
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
       }
       #n1:hover {
@@ -29,30 +29,32 @@
   <nav>
   <a class="apk"><img class = "logoPK" src="img/Logo.png"></a> 
   <a id="n" href="./spisok.php"><span>Список</span></a><br>
-  <a id="n1" class = "n" href="./ins.php"><span>Добавление</span></a><br>
-  <a id="n" href="./upd.php"><span>Редактирование</span></a><br>
-  <a id="n" href="./del.php"><span>Удаление</span></a><br>
+  <a id="n1" href="./ins.php"><span>Добавление</span></a><br>
   <a id="n" href="./otch.php"><span>Отчёт</span></a><br>
   <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
-  <fieldset><form action="inc/insert.php" method="post"> 
-    <h1>Добавление товара</h1><br>
-    <label>Наименование товара</label>
+  <fieldset><form class="form" action="inc/insert.php" method="post"> 
+    <h1>Добавление объекта</h1><br>
+    <label>Наименование объекта <span style="color: red;">*</span></label>
     <input type="text" name = "name" placeholder="Введите наименование">
-    <label>Тип товара</label><br>
+    <label>Номер кабинета <span style="color: red;">*</span></label><br>
     <select name="type">
       <option disabled selected>Выберите из списка</option>
-      <option value="Компьютер">Компьютер</option>
-      <option value="Стол">Стол</option>
-      <option value="Шкаф">Шкаф</option>
-      <option value="Монитор">Монитор</option>
-      <option value="МФУ">МФУ</option>
+      <option value="102(1)">102(1)</option>
+      <option value="102(2)">102(2)</option>
+      <option value="102(3)">102(3)</option>
      </select><br>
     <label>Инвентаризационный номер</label>
-    <input type="text" name = "number" placeholder="Введите номер">
-    <label>Количество</label>
+    <input type="text" name = "number" placeholder="Введите номер (если имеется)">
+    <label>Количество <span style="color: red;">*</span> </label>
     <input type="number" name = "cont" placeholder="Введите число">
     <button type = "submit" class="button">Добавить</button>
+    <?php 
+      if ($_SESSION['message']){
+        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+      }
+      unset($_SESSION['message']);
+      ?>
 </form></fieldset>
   </div>
   </div>

@@ -25,7 +25,7 @@
         border: none;  
         outline: none; 
         text-decoration: none;
-        color: #429E9D;
+        color: #0073bd;
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
       }
       #n1:hover {
@@ -46,24 +46,20 @@
   <a class="apk"><img class = "logoPK" src="../img/Logo.png"></a> 
   <a id="n" href="../spisok.php"><span>Список</span></a><br>
   <a id="n" href="../ins.php"><span>Добавление</span></a><br>
-  <a id="n" href="../upd.php"><span>Редактирование</span></a><br>
-  <a id="n" href="../del.php"><span>Удаление</span></a><br>
   <a id="n" href="../otch.php"><span>Отчёт</span></a><br>
   <a id="ex" href="../inc/logout.php">Выход</a>
   </nav>
-  <fieldset><form action = "../inc/update.php" method = "get">
+  <fieldset><form class="form" action = "../inc/update.php" method = "get">
   <h1>Редактирование информации</h1><br>
     <input type="hidden" name="id" value="<?= $product['id'] ?>">
-    <label>Наименование товара</label>
+    <label>Наименование объекта</label>
     <input type="text" name="name" placeholder="Введите наименование" value="<?= $product['name'] ?>">
-    <label>Тип товара</label><br>
+    <label>Номер кабинета</label><br>
     <select name="type">
       <option disabled selected><?= $product['type'] ?></option>
-      <option value="Компьютер">Компьютер</option>
-      <option value="Стол">Стол</option>
-      <option value="Шкаф">Шкаф</option>
-      <option value="Монитор">Монитор</option>
-      <option value="МФУ">МФУ</option>
+      <option value="102(1)">102(1)</option>
+      <option value="102(2)">102(2)</option>
+      <option value="102(3)">102(3)</option>
      </select><br>
     <label>Инвентаризационный номер</label>
     <input type="text" name="number" placeholder="Введите номер" value="<?= $product['number'] ?>">
@@ -81,7 +77,7 @@
     <div id="mainbody">
     <table border="0" align="center">
     <tbody><tr class="text"><td>
-    <p style="font-size:20px;text-align:center; margin-bottom: 5%;">ID товара и его QR-код</p>
+    <p style="font-size:20px;text-align:center; margin-bottom: 5%;">ID объекта и его QR-код</p>
     <textarea cols="40" rows="1" id="data" readonly><?= $product['id'] ?></textarea>
     </td></tr>
     <tr><td align="center">
