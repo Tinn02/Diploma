@@ -9,6 +9,8 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Авторизация</title>
+    <link rel="icon" href="img/logo-rssu.png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.sitename.com/dirname/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/auth.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500&family=Poiret+One&display=swap');
