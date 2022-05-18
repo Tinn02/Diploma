@@ -20,7 +20,6 @@
     <link rel="icon" href="img/logo-rssu.png" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.sitename.com/dirname/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500&family=Poiret+One&display=swap');
       #n1 {
@@ -32,9 +31,6 @@
       }
       #n1:hover {
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 0);
-      }
-      img {
-        border: 0.5px solid ;
       }
       </style>
 <body onload="create()">

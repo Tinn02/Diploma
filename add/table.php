@@ -15,9 +15,13 @@
     <link rel="icon" href="../img/logo-rssu.png" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.sitename.com/dirname/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500&family=Poiret+One&display=swap');
+
+      @page {
+        margin-top: 4.15%;
+      }
+      
       #n1 {
         border: none;  
         outline: none; 
