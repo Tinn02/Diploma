@@ -52,7 +52,6 @@
         $type = $_GET['search'];
       ?>
       <h1 style="padding-bottom: 0;">Собственность РГСУ в кабинете №<?= $type ?> является:</h1><br>
-      <!-- <td style="padding-bottom: 1%;" colspan="5" ><h1 style="padding-bottom: 0;">Собственность РГСУ в кабинете №<?= $type ?> является:</h1></td> -->
         <tr>
           <th>№</th>
           <th>Наименование</th>
@@ -67,19 +66,19 @@
           ?>
           <tbody>  
           <tr class="cont">
-          <td style="padding: 5px 30px 5px 30px;"></td>
-          <td style="padding: 5px 30px 5px 30px;"><?= $product[1] ?></td>
+          <td ></td>
+          <td style="text-align: left;"><?= $product[1] ?></td>
           <!-- <td><?= $product[2] ?></td> -->
-          <td style="padding: 5px 30px 5px 30px;"><?= $product[3] ?></td>
-          <td style="padding: 5px 30px 5px 30px;"><?= $product[4] ?></td>
+          <td style="text-align: left;"><?= nl2br($product[3]) ?></td>
+          <td><?= $product[4] ?></td>
         </tr>
         <tfoot>
           <?php
         }
         ?>
       </table><br>
-      <p style="text-align: left; margin-left: 10px;">Ответственный за кабинет №<?= $type ?> _______________/</p>
-      </div>
+      <p style="text-align: left; margin-left: 10px;">Ответственный за кабинет №<?= $type ?> _______________________/</p>
+      </div><br>
   <button style="margin: 0 auto 1%; display: block;" class="button" onclick="window.print()">Распечатать отчёт</button>
 </fieldset>
 </div>

@@ -4,6 +4,9 @@
         header('Location: index.php');
     }
 ?> 
+<?php
+  require_once 'inc/connect.php'
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -40,12 +43,22 @@
     <label>Номер кабинета <span style="color: red;">*</span></label><br>
     <select name="type">
       <option disabled selected>Выберите из списка</option>
-      <option value="102(1)">102(1)</option>
+      <?php
+        $products = mysqli_query($connect, "SELECT * FROM `cabinets`");
+        $products = mysqli_fetch_all($products);
+        foreach ($products as $product){
+          ?>
+      <!-- <option value="102(1)">102(1)</option>
       <option value="102(2)">102(2)</option>
-      <option value="102(3)">102(3)</option>
+      <option value="102(3)">102(3)</option> -->
+      <option value="<?= $product[0] ?>"><?= $product[0] ?></option>
+      <?php
+        }
+        ?>
      </select><br>
     <label>Инвентаризационный номер</label>
-    <input type="text" name = "number" placeholder="Введите номер (если имеется)">
+    <!-- <input type="text" name = "number" placeholder="Введите номер (если имеется)"> -->
+    <textarea style="text-align: left; margin: 10px 0; padding: 7px;" name="number" cols="10" rows="5" placeholder="Введите номер (если имеется)"></textarea>
     <label>Количество <span style="color: red;">*</span> </label>
     <input type="number" name = "cont" placeholder="Введите число">
     <button type = "submit" class="button">Добавить</button>

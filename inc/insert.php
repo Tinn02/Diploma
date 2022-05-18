@@ -8,6 +8,10 @@
     $number = trim($_REQUEST['number']);
     $cont = trim($_REQUEST['cont']);
 
+    if ($number === '' or $number === 'бн' or $number === ('б\н')) {
+        $number = addslashes('б\н');;
+    }
+
     if (!empty($name) && !empty($type) && !empty($cont)){
         mysqli_query($connect, "INSERT INTO `goods` (`id`, `name`, `type`, `number`, `cont`) VALUES (NULL, '$name', '$type', '$number', '$cont')");
 

@@ -29,9 +29,6 @@
       input {
         width: 100%;
       }
-      .button {
-        margin: 10px 0;
-      }
       </style>
       
 <body>
@@ -47,8 +44,27 @@
   <h1>Список объектов</h1>
   <p>Поиск объекта</p>
   <form class="search" action = "" method = "get">
-    <input type="text" name="search" placeholder="Введите наименование, инвентаризационный номер или ID">
-    <button type = "submit" class="button">Найти</button>
+    <input type="text" id="search" name="search" onkeyup="tableSearch()" placeholder="Введите наименование, инвентаризационный номер или № кабинета">
+    <script>
+    function tableSearch() {
+    var phrase = document.getElementById('search');
+    var table = document.getElementById('table');
+    var regPhrase = new RegExp(phrase.value, 'i');
+    var flag = false;
+    for (var i = 1; i < table.rows.length; i++) {
+        flag = false;
+        for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+            flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+            if (flag) break;
+        }
+        if (flag) {
+            table.rows[i].style.display = "";
+        } else {
+            table.rows[i].style.display = "none";
+        }
+    }
+}   
+    </script>
     </form>
     <?php 
       if ($_SESSION['message']){
@@ -56,24 +72,8 @@
       }
       unset($_SESSION['message']);
       ?>
-    <?php if(!empty($_GET['search'])){
-      session_start();
-      $search = trim($_GET['search']);
-      $check = mysqli_query($connect, "SELECT * FROM `goods` WHERE `name` = '$search' OR `number` = '$search' OR `id` = '$search' LIMIT 1");
-      if (mysqli_num_rows($check) > 0) {
-          $obj = mysqli_fetch_assoc($check);
-  
-          $id = $obj['id'];
-          
-          $_SESSION['message'] = 'Объект найден';
-          header("Location: ../info.php?id=$id");
-      } else {
-          $_SESSION['message'] = 'Такого объекта нет';
-          header('Location: ../spisok.php');
-      }
-} ?>
       <div class = "tableSP">
-      <table style="border: none;" class="table">
+      <table style="border: none;" class="table" id="table">
       <thead>
         <tr>
           <th>ID</th>
@@ -96,7 +96,7 @@
           <td><?= $product[0] ?></td>
           <td><?= $product[1] ?></td>
           <td><?= $product[2] ?></td>
-          <td><?= $product[3] ?></td>
+          <td><?= nl2br($product[3]) ?></td>
           <td><?= $product[4] ?></td>
           <td><a href="/info.php?id=<?= $product[0] ?>"><img class = "tags" src="img/info.png" alt="Инфо"></a></td>
           <td><a href="/add/update.php?search=<?= $product[0] ?>"><img class = "tags" src="img/red.png" alt="Редактирование"></a></td>

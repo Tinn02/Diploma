@@ -46,14 +46,18 @@
   </nav>
   <fieldset><form class="form" action = "" method = "get">
   <h1>Отчёт по кабинету</h1><br>
-    <p>Поиск</p>
+    <p>Поиск</p><br>
     <select name="search">
       <option disabled selected>Выберите кабинет из списка</option>
-      <option value="102(1)">102(1)</option>
-      <option value="102(2)">102(2)</option>
-      <option value="102(3)">102(3)</option>
-      <option value="112">112</option>
-      <option value="123">123</option>
+      <?php
+        $products = mysqli_query($connect, "SELECT * FROM `cabinets`");
+        $products = mysqli_fetch_all($products);
+        foreach ($products as $product){
+          ?>
+      <option value="<?= $product[0] ?>"><?= $product[0] ?></option>
+      <?php
+        }
+        ?>
      </select><br>
     <button type = "submit" class="button">Найти</button>
     <?php 
@@ -74,10 +78,9 @@
   
           $type = $obj['type'];
           
-          $_SESSION['message'] = 'Отчёт сформирован';
           header("Location: ../add/table.php?search=$type");
       } else {
-          $_SESSION['message'] = 'Такого кабинета нет';
+          $_SESSION['message'] = 'В данном кабинете нет объектов';
           header('Location: ../otch.php');
       }
 } ?>

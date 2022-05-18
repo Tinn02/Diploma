@@ -50,7 +50,7 @@
     <label>Тип объекта</label>
     <input type="text" value="<?= $product['type'] ?>" readonly>
     <label>Инвентаризационный номер</label>
-    <input type="text" name="number" value="<?= $product['number'] ?>" readonly>
+    <textarea style="text-align: left; margin: 10px 0; padding: 7px;" name="number" cols="10" rows="5" placeholder="Введите номер (если имеется)" readonly><?= $product['number'] ?></textarea>
     <label>Количество</label>
     <input type="number" name="cont" value="<?= $product['cont'] ?>" readonly>
     <?php 

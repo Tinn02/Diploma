@@ -56,21 +56,26 @@
     <input type="text" name="name" placeholder="Введите наименование" value="<?= $product['name'] ?>">
     <label>Номер кабинета</label><br>
     <select name="type">
-      <option disabled selected><?= $product['type'] ?></option>
-      <option value="102(1)">102(1)</option>
-      <option value="102(2)">102(2)</option>
-      <option value="102(3)">102(3)</option>
+      <option style = "display: none;"><?= $product['type'] ?></option>
+      <?php
+        $products = mysqli_query($connect, "SELECT * FROM `cabinets`");
+        $products = mysqli_fetch_all($products);
+        foreach ($products as $product){
+          ?>
+      <option value="<?= $product[0] ?>"><?= $product[0] ?></option>
+      <?php
+        }
+        ?>
+      <?php
+        $id = $_GET['search'];
+        $product = mysqli_query($connect, "SELECT * FROM `goods` WHERE `id` = '$id'");
+        $product = mysqli_fetch_assoc($product);
+        ?>
      </select><br>
     <label>Инвентаризационный номер</label>
-    <input type="text" name="number" placeholder="Введите номер" value="<?= $product['number'] ?>">
+    <textarea style="text-align: left; margin: 10px 0; padding: 7px;" name="number" cols="10" rows="5" placeholder="Введите номер (если имеется)"><?= $product['number'] ?></textarea>
     <label>Количество</label>
     <input type="number" name="cont" placeholder="Введите число" value="<?= $product['cont'] ?>">
-    <?php 
-      if ($_SESSION['message']){
-        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-      }
-      unset($_SESSION['message']);
-      ?>
     <button class="button">Изменить</button>
 </form></fieldset>
 <div class="qrc" style="margin-left: 2%;">
