@@ -107,7 +107,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `login`, `password`) VALUES
 (1, 'Tinn02', 'zxc'),
-(2, 'RSSU', '1234qwer!@#$');
+(2, 'RSSU', '1234qwer');
 
 --
 -- Индексы сохранённых таблиц
