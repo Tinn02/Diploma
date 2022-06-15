@@ -82,9 +82,9 @@
           <th>Номер кабинета</th>
           <th>Инвентаризационный номер</th>
           <th>Количество</th>
-          <th style="border: none; background: white;"></th>
-          <th style="border: none; background: white;"></th>
-          <th style="border: none; background: white;"></th>
+          <th style="border: none; opacity: 0;"></th>
+          <th style="border: none; opacity: 0;"></th>
+          <th style="border: none; opacity: 0;"></th>
         </tr>
         </thead>
         <?php
